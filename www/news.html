@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" href="css/themes/mystyle.min.css" />
+        <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Courses</title>
+        <script type="text/javascript">
+            if(localStorage.login == "true" && localStorage.getItem("email") != null && localStorage.getItem("uid") != null){
+                document.write(localStorage.email);
+            }else{
+                window.location.href = "index.html";
+            }
+            
+        </script>
+    </head>
+    <body>
+        <div id="container">
+        <!-- account page -->
+            <div data-role="page" id="news" data-theme="a">
+                <div data-role="header" data-position="fixed" data-add-back-btn="false" class="app-header">
+                    <a id="sign-out" onclick="signOut()" href="" class="ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-left">Sign out</a>
+                    <h1>News</h1>
+                    
+                </div>
+                <div data-role="content" data-theme="a">
+                    <div data-role="collapsible" data-inset="false">
+                    <h3>Cert III - Weekday Day 1</h3>
+                    <ul data-role="listview">
+                        <li>Start Date: Mon, Feb 29 2016</li>
+                        <li>End Date: Mon, Feb 29 2016</li>
+                        <li>Time: 8:00 AM - 4:00 AM</li>
+                        <li>Location: Rowville</li>                  
+                    </ul>
+                </div><!-- /collapsible -->
+                <div data-role="collapsible" data-inset="false">
+                    <h3>Traffic Management Course at Rowville</h3>
+                    <ul data-role="listview">
+                        <li>Start Date: Wed, Mar 2 2016</li>
+                        <li>End Date: Wed, Mar 2 2016</li>
+                        <li>Time: 8:00 AM - 4:00 PM</li>
+                        <li>Location: Rowville</li> 
+                    </ul>
+                </div><!-- /collapsible -->
+                <div data-role="collapsible" data-inset="false">
+                    <h3>Forklift Course at Rowville - Day 1</h3>
+                    <ul data-role="listview">
+                        <li>Start Date: Wed, Mar 2 2016</li>
+                        <li>End Date: Wed, Mar 2 2016</li>
+                        <li>Time: 8:00 AM - 4:00 PM</li>
+                        <li>Location: Rowville</li> 
+                    </ul>
+                </div><!-- /collapsible -->
+                    <!-- content -->
+                </div>
+                <div data-role="footer" data-position="fixed">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="#" data-icon="user" onclick="window.location.href = 'account.html';">Account</a></li>
+                            <li><a href="#" data-icon="calendar" onclick="window.location.href = 'courses.html';">Courses</a></li>
+                            <li><a href="#" data-icon="star" onclick="window.location.href = 'certificates.html';">Certificates</a></li>
+                            <li><a href="#" data-icon="phone" onclick="window.location.href = 'news.html';" class="ui-btn-active">News</a></li>
+                        </ul>
+                    </div><!-- /navbar -->
+                </div><!-- /footer -->
+            </div>
+        <!-- main menu page -->
+        </div>
+        <!-- js -->
+        <script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery.md5.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+            // $('#sign-out').on('click', app.loginUser);
+        </script>
+    </body>
+</html>

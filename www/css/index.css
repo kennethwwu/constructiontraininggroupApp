@@ -1,0 +1,56 @@
+body, .ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper{
+    background:url('../img/app_bg.png') no-repeat center center fixed !important;
+    color:#fff !important;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover !important; 
+}
+
+.ui-content.ui-body-a{
+	background-color: transparent !important;
+}
+
+.ui-content.ui-body-a label{
+	color: #fff !important;
+	text-shadow: none !important;
+}
+
+#upload-form label {
+    color: #000 !important;
+}
+
+#container button{
+	background: linear-gradient(to bottom, rgba(204,130,43,1) 0%,rgba(255,203,5,0.98) 24%,rgba(255,203,5,0.93) 74%,rgba(204,130,43,0.9) 100%);
+	text-transform: uppercase !important;
+	color: #000;
+	border-width: 0 !important;
+	text-shadow: 0 1px 0 #f3f3f3; 
+}
+
+.app-header{
+    /*padding-top: 13px;*/
+}
+
+.app-header .ui-icon-delete{
+	/*top:18px;*/
+}
+
+#logo{
+    background: url('../img/logo.png') no-repeat top center;
+    padding: 80px 85px;
+}
+
+#thumbnail-img{
+	background: url('../img/profile.jpg') no-repeat top center;
+	padding: 80px 80px;
+}
+
+/*certificates.html*/
+#upload-form{
+	/*display: none;*/
+}
+
+#certi-photo{
+	display: none;
+}

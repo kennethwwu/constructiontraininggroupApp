@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" href="./css/themes/mystyle.min.css" />
+        <link rel="stylesheet" href="./css/themes/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" type="text/css" href="./css/jquery.mobile-1.4.5.min.css">
+        <link rel="stylesheet" type="text/css" href="./css/index.css" />
+
+        <title>Login</title>
+        <script type="text/javascript">
+            if(localStorage.login == "true" && localStorage.getItem("email") != null && localStorage.getItem("uid")!= null){
+                console.log(localStorage.login+localStorage.email+localStorage.uid);
+                window.location.href = "#account";
+            }
+            else{
+                console.log(localStorage.login+localStorage.email+localStorage.ui);
+                window.location.href = "#login";
+            }
+        </script>
+    </head>
+    <body>
+        <div id="container">
+        <!-- login page -->
+            <div data-role="page" id="login" data-theme="a">
+                <div data-role="header" data-position="fixed" data-add-back-btn="false" class="app-header">
+                    <h1>Please login</h1>
+                </div>
+                <div data-role="content" data-theme="a">
+                    <!-- logo -->
+                    <div id="logo"></div>
+                    <!-- login form -->
+                    <div data-role="fieldcontain">
+                      <label for="email">Email:</label>
+                      <input type="email" name="email" id="email" value="" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'"/>
+                      <label for="Password">Password:</label>
+                      <input type="password" name="password" id="password" value="" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'"/>
+                    </div>
+                    <button id="btn-login">Login</button>
+                    <!-- <input id="btn-login" type="submit" value="Login" class="ui-btn ui-corner-all"> -->
+                </div>
+            </div>
+        <!-- login page -->
+
+        <!-- account page -->
+            <div data-role="page" id="account" data-theme="a">
+                <div data-role="header" data-position="fixed" data-add-back-btn="false" class="app-header">
+                    <!-- <a id="sign-out" onclick="signOut()" href="" class="ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-left">Sign out</a> -->
+                    <h1>Account</h1>
+                    
+                </div>
+                <div data-role="content" data-theme="a">
+                    <!-- logo -->
+                    <div id="thumbnail-img"></div>
+                    <!-- content -->
+                    <div class="ui-corner-all custom-corners" style="margin-top:18px">
+                      <div class="ui-bar ui-bar-a">
+                        <h3>Account info</h3>
+                      </div>
+                      <div id="user-info" class="ui-body ui-body-a">                        
+                      </div>
+                    </div>
+
+                    <button id="sign-out" onclick="signOut()">Sign out</button>
+                    <!-- content -->
+                    
+                    
+                </div>
+                <div data-role="footer" data-position="fixed">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="#account" data-icon="user" class="ui-btn-active">Account</a></li>
+                            <li><a href="#courses" data-icon="calendar">Courses</a></li>
+                            <li><a href="#certificates" data-icon="star">Certificates</a></li>
+                            <li><a href="#news" data-icon="comment">News</a></li>
+                        </ul>
+                    </div><!-- /navbar -->
+                </div><!-- /footer -->
+            </div>
+        <!-- account page -->
+
+        <!-- courses page -->
+            <div data-role="page" id="courses" data-theme="a">
+                <div data-role="header" data-position="fixed" data-add-back-btn="false" class="app-header">
+                    <!-- <a id="sign-out" onclick="signOut()" href="" class="ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-left">Sign out</a> -->
+                    <h1>Courses</h1>
+                    
+                </div>
+                <div id="course-list" data-role="content" data-theme="a">
+                </div>
+                <div data-role="footer" data-position="fixed">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="#account" data-icon="user">Account</a></li>
+                            <li><a href="#courses" data-icon="calendar" class="ui-btn-active">Courses</a></li>
+                            <li><a href="#certificates" data-icon="star">Certificates</a></li>
+                            <li><a href="#news" data-icon="comment">News</a></li>
+                        </ul>
+                    </div><!-- /navbar -->
+                </div><!-- /footer -->
+            </div>
+            <!-- courses page -->
+
+            <!-- cerificate page -->
+            <div data-role="page" id="certificates" data-theme="a">
+                <div data-role="header" data-position="fixed" data-add-back-btn="false" class="app-header">
+                    <!-- <a id="sign-out" onclick="signOut()" href="" class="ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-left">Sign out</a> -->
+                    <h1>Certificates</h1>
+                    
+                </div>
+
+                <div data-role="content" data-theme="a">
+                    <!-- certificates list -->
+                    <ul id="certi-list" data-role="listview" data-inset="true">
+                        <!-- <li><a href="#">
+                            <img src="http://itccprojects.com.au/appandroid/upload/img/0efc6a6c4d42180415bf5d077e1be73c.jpg">
+                        <h2>Certificates A</h2>
+                        <p>Expire Date: 10/05/2016</p></a>
+                        </li>
+                        <li><a href="#">
+                            <img src="http://itccprojects.com.au/appandroid/upload/img/21913cec6d0c6fd1eaf4d784df6a60c4.jpg">
+                        <h2>Certificates B</h2>
+                        <p>Expire Date: 05/06/2016</p></a>
+                        </li>
+                        <li><a href="#">
+                            <img src="http://itccprojects.com.au/appandroid/upload/img/2939690557d5188d3e67c95caddbefe0.jpg">
+                        <h2>Certificates C</h2>
+                        <p>Expire Date: 05/09/2017</p></a>
+                        </li> -->
+                    </ul>
+                    
+                    <!-- add a photo -->
+                    <button id="btnPhoto">Add a Certificate</button>
+                    
+                    <!-- form -->
+                    <form id="upload-form" onsubmit="return false;">
+                        <img id="certi-photo" width=250 height=auto src="">
+                        <ul data-role="listview" data-inset="true">
+                            <li class="ui-field-contain">
+                                <label for="certificate-name">Certificate Name:</label>
+                                <input id="certificate-name" type="text" name="certificate-name"  value="" data-clear-btn="true">
+                            </li>
+                            <li class="ui-field-contain">
+                                <label for="exp-date">Expiry Date:</label>
+                                <input id="exp-date" type="date" name="exp-date"  value="" data-clear-btn="true">
+                            </li>
+                            <li class="ui-field-contain">
+                                <label for="rem-date">Reminder Date:</label>
+                                <input id="rem-date" type="date" name="rem-date"  value="" data-clear-btn="true">
+                            </li>
+                            <li class="ui-body ui-body-b">                                   
+                                    <button id="addCerti">Submit</button>
+                            </li>
+                        </ul>
+                    </form>
+                    <!-- form -->
+                    
+                </div>
+                <!-- content -->
+                <div data-role="footer" data-position="fixed">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="#account" data-icon="user">Account</a></li>
+                            <li><a href="#courses" data-icon="calendar">Courses</a></li>
+                            <li><a href="#certificates" data-icon="star" class="ui-btn-active">Certificates</a></li>
+                            <li><a href="#news" data-icon="comment">News</a></li>
+                        </ul>
+                    </div><!-- /navbar -->
+                </div><!-- /footer -->
+            </div>
+            <!-- certificate page -->
+
+            <!-- news page -->
+            <div data-role="page" id="news" data-theme="a">
+                <div data-role="header" data-position="fixed" data-add-back-btn="false" class="app-header">
+                    <!-- <a id="sign-out" onclick="signOut()" href="" class="ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-left">Sign out</a> -->
+                    <h1>News</h1>
+                    
+                </div>
+                <div id="accordion" data-role="content" data-theme="a">
+                    
+                </div>
+                <div data-role="footer" data-position="fixed">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="#account" data-icon="user">Account</a></li>
+                            <li><a href="#courses" data-icon="calendar">Courses</a></li>
+                            <li><a href="#certificates" data-icon="star">Certificates</a></li>
+                            <li><a href="#news" data-icon="comment" class="ui-btn-active">News</a></li>
+                        </ul>
+                    </div><!-- /navbar -->
+                </div><!-- /footer -->
+            </div>
+            <!-- news page -->
+        </div>
+        <!-- container -->
+        <!-- js -->
+        <script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery.md5.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+
+            $(document).ready(function(){
+                app.getRSSFeed("http://www.constructiontraininggroup.com.au/feed");
+                app.getUser();
+                getCourse();
+                getCert();
+                $('#btn-login').on('click', app.loginUser);
+                $('#btnPhoto').on('click', app.getPhoto);
+                $('#addCerti').on('click', function(){
+                    var cname = $('#certificate-name').val();
+                    var start = $('#exp-date').val();
+                    var end = $('#rem-date').val();
+                    console.log(cname+start+end);
+                    if(cname !='' && start!='' && end !=''){
+                        app.uploadPhoto(end, cname);
+                        app.addReminder(start, end, cname);
+                    }
+                    
+                });
+            });
+
+        </script>
+    </body>
+</html>

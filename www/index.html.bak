@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" href="css/themes/mystyle.min.css" />
+        <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+        <title>Login</title>
+        <script type="text/javascript">
+            if(localStorage.login == "true" && localStorage.getItem("email") != null && localStorage.getItem("uid")!= null){
+                window.location.href = "certificates.html";
+            }
+        </script>
+    </head>
+    <body id="deviceready">
+        <div id="container">
+        <!-- login page -->
+            <div data-role="page" id="login" data-theme="a">
+                <div data-role="header" data-position="fixed" data-add-back-btn="false" class="app-header">
+                    <h1>Please login</h1>
+                </div>
+                <div data-role="content" data-theme="a">
+                    <!-- logo -->
+                    <div id="logo"></div>
+                    <!-- login form -->
+                    <div data-role="fieldcontain">
+                      <label for="email">Email:</label>
+                      <input type="email" name="email" id="email" value="" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'"/>
+                      <label for="Password">Password:</label>
+                      <input type="password" name="password" id="password" value="" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'"/>
+                    </div>
+                    <input id="btn-login" type="submit" value="Login" class="ui-btn ui-corner-all">
+                </div>
+            </div>
+        <!-- main menu page -->
+        </div>
+        <!-- container -->
+        <!-- js -->
+        <script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery.md5.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+            $('#btn-login').on('click', app.loginUser);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-calendar": {
+            "PACKAGE_NAME": "au.com.constructiontrainninggroup.app"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "au.com.constructiontrainninggroup.app"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "au.com.constructiontrainninggroup.app"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "au.com.constructiontrainninggroup.app"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "au.com.constructiontrainninggroup.app"
+        },
+        "onesignal-cordova-plugin": {
+            "PACKAGE_NAME": "au.com.constructiontrainninggroup.app"
+        }
+    },
+    "dependent_plugins": {}
+}
